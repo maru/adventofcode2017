@@ -70,6 +70,6 @@ func main() {
 	// PART 1
 	fmt.Println(countSteps(v))
 
-	// PART 1
+	// PART 2
 	fmt.Println(countSteps(v))
 }
