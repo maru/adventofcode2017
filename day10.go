@@ -13,23 +13,16 @@ func knotHash(arr []int, size int, lengths []int, pos *int, skipSize *int) {
 		if len > size {
 			continue
 		}
-		// fmt.Println("len=", len, "pos=", pos, "skip=", skipSize)
 		// Reverse
 		for i := 0; i < len/2; i++ {
 			j := (i + *pos) % size
 			k := (*pos + len - 1 - i + size) % size
-			// println(j, k)
 			arr[j], arr[k] = arr[k], arr[j]
 		}
 		// Move pos
 		*pos = (*pos + len + *skipSize) % size
 		// Increase skipSize
 		*skipSize++
-
-		// for _, v := range arr {
-		//     fmt.Printf("%d ", v)
-		// }
-		// fmt.Println()
 	}
 }
 
@@ -43,7 +36,6 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		s := scanner.Text()
-		fmt.Println("====", s, "====")
 
 		// Part 1
 		{
@@ -61,10 +53,6 @@ func main() {
 			pos := 0
 			skipSize := 0
 			knotHash(arr, size, lengths, &pos, &skipSize)
-			// for _, v := range arr {
-			//     fmt.Printf("%d ", v)
-			// }
-			// fmt.Println()
 			fmt.Println(arr[0], "*", arr[1], "=", arr[0]*arr[1])
 		}
 
