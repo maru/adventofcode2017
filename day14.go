@@ -4,8 +4,6 @@ import (
 	"bufio"
 	"fmt"
 	"os"
-	// "strings"
-	// "strconv"
 )
 
 func knotHash(lengths []int) []int {
